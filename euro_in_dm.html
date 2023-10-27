@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Euro in DM</title>
+</head>
+<body>
+<div>
+    <input type="number" id="inputTop" value=0><br>
+    <label>
+        <input type="checkbox" id="dmInEuroCB">DM in Euro</label>
+    <label>
+        <input type="checkbox" id="euroInDmCB">Euro in DM</label><br>
+    <button id="convertButton">Umrechnen!</button>
+    <input type="number" id="inputBottom" value=0>
+</div>
+<script>
+
+    // HTML Elemente in Konstanten zwischenspeichern
+    const inputTop = document.getElementById("inputTop");
+    const inputBottom = document.getElementById("inputBottom");
+    const dmInEuroCB = document.getElementById("dmInEuroCB");
+    const euroInDmCB = document.getElementById("euroInDmCB");
+    const convertButton = document.getElementById("convertButton");
+    const exchangeRate = 1.95583;
+
+    // Nur eine Checkbox darf gecheckt sein. Wenn die nicht aktuelle geklickt wird,
+    // wird die aktuelle unchecked
+    dmInEuroCB.addEventListener("change", () => {
+        if (dmInEuroCB.checked) {
+            euroInDmCB.checked = false;
+        }
+    });
+
+    euroInDmCB.addEventListener("change", () => {
+        if (euroInDmCB.checked) {
+            dmInEuroCB.checked = false;
+        }
+    });
+
+    // Button Logik
+    convertButton.addEventListener("click", () => {
+        const amountTop = parseFloat(inputTop.value);
+        const amountBottom = parseFloat(inputBottom.value);
+
+        // Wenn das Input Feld leer ist, wird automatisch der Wert '0' eingetragen
+        if (isNaN(amountTop) || isNaN(amountBottom)) {
+            inputTop.value = 0;
+            inputBottom.value = 0;
+            return;
+        }
+
+        // Umrechnungslogik: Je nach dem welche Checkbox checked ist, wird der
+        // jeweilige input umgerechnet und das Ergebnis in das richtige
+        // input Feld als value eingetragen
+        if (dmInEuroCB.checked) {
+            inputBottom.value = inputTop.value * exchangeRate;
+            console.log(inputTop.value + "   " + exchangeRate)
+        } else if (euroInDmCB.checked) {
+            inputTop.value = inputBottom.value / exchangeRate;
+            console.log(inputBottom.value + "   " + exchangeRate)
+        } else {
+            console.log("Keine Checkbox ausgewählt");
+        }
+    });
+</script>
+</body>
+</html>
