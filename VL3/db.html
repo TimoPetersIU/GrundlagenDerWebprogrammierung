@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DB</title>
+</head>
+<body>
+    <a href="" id="time">Zeit</a><br>
+    <a href="" id="weekday">Wochentag</a><br>
+    <a href="" id="day">Tag</a><br>
+    <a href="" id="month">Monat</a><br>
+    <p>Fertig!</p>
+    <script>
+        var Jetzt = new Date();
+        var Zeit = Jetzt.getTime();
+        var Monat = Jetzt.getMonth() + 1;
+        var Wochentag = Jetzt.getDay();
+        var Tag = Jetzt.getDate();
+        var Stunden = Jetzt.getHours();
+        var Minuten = Jetzt.getMinutes();
+        var Sekunden = Jetzt.getSeconds();
+        // document.write(Tag);
+        // document.write(Monat);
+        document.write(Stunden + " " + Minuten + " " + Sekunden);
+
+    </script>
+</body>
+</html>

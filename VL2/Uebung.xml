@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wagen>
+    <Auto>
+        <Baujahr>1998</Baujahr>
+        <Farbe>schwarz</Farbe>
+        <Marke>BMW</Marke>
+        <Preis>30€</Preis>
+        <Fahrzeugmodell>Keine Ahnung</Fahrzeugmodell>
+
+    </Auto>
+    <Auto>
+        <Baujahr>1998</Baujahr>
+        <Farbe>schwarz</Farbe>
+        <Marke>BMW</Marke>
+        <Preis>20€</Preis>
+        <Fahrzeugmodell>1998</Fahrzeugmodell>
+
+    </Auto>
+</Wagen>
